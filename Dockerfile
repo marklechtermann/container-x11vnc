@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -16,9 +16,11 @@ RUN set -ex; \
     xvfb \
     gtk2.0 \
     xdotool \
-    wget
-
-RUN apt-get install -y fonts-liberation xdg-utils
+    wget \
+    fonts-liberation \
+    xdg-utils \
+    libnss3 \
+    libnspr4
 
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg -i google-chrome-stable_current_amd64.deb && \
