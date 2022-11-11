@@ -15,7 +15,8 @@ RUN set -ex; \
     xterm \
     xvfb \
     gtk2.0 \
-    xdotool 
+    xdotool \
+    wget
 
 RUN apt-get install -y fonts-liberation xdg-utils
 
