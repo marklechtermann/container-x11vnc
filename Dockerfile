@@ -17,8 +17,10 @@ RUN set -ex; \
     gtk2.0 \
     xdotool 
 
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.de \
-    dpkg -i google-chrome-stable_current_amd64.deb \
+RUN apt-get install -y fonts-liberation xdg-utils
+
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    dpkg -i google-chrome-stable_current_amd64.deb && \
     rm google-chrome-stable_current_amd64.deb
 
 ENV HOME=/root \
